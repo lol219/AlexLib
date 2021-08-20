@@ -1,8 +1,8 @@
 /**
  * @name AlexLib
  * @authorLink https://github.com/BlueCannonBall
- * @updateUrl 
- * @source 
+ * @updateUrl https://raw.githubusercontent.com/lol219/AlexLib/main/AlexLib.plugin.js
+ * @source https://raw.githubusercontent.com/lol219/AlexLib/main/AlexLib.plugin.js
  * @description Required library for Alexandro's plugin , please do not delete it 
  */
 
@@ -32,7 +32,7 @@ class AlexLib{
 
     start() {
         if (!global.ZeresPluginLibrary) return window.BdApi.alert("Library Missing",`The library plugin needed for ${this.getName()} is missing.<br /><br /> <a href="https://betterdiscord.net/ghdl?url=https://raw.githubusercontent.com/rauenzi/BDPluginLibrary/master/release/0PluginLibrary.plugin.js" target="_blank">Click here to download the library!</a>`);
-        ZLibrary.PluginUpdater.checkForUpdate(this.getName(), this.getVersion(), "");
+        ZLibrary.PluginUpdater.checkForUpdate(this.getName(), this.getVersion(), "https://raw.githubusercontent.com/lol219/AlexLib/main/AlexLib.plugin.js");
     }
 
     stop() {
