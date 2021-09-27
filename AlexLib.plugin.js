@@ -16,6 +16,12 @@
     const { React, ModalStack, ReactDOM, ChannelStore, GuildStore, UserStore, DiscordConstants, Dispatcher, GuildMemberStore, GuildActions, PrivateChannelActions, LayerManager, InviteActions, FlexChild, Titles, Changelog: ChangelogModal } = DiscordModules;
 }
  const shouldPass = e => e && e.constructor && typeof e.constructor.name === 'string' && e.constructor.name.indexOf('HTML');
+const BdApi = window.BdApi; //very very important 
+const parseData = (dataString, fetched) => {
+if (InternalData) loadLibrary();
+            else BdApi.alert("Error", "Could not initiate AlexLib Library . Check your Internet Connection and make sure GitHub isn't blocked by your Network.");
+        };
+
 
 
 
@@ -34,7 +40,7 @@
 class AlexLib{
     getName() {return "AlexLib";}
     getDescription() {return "Required library for Alexandro's plugin , please do not delete it ";}
-    getVersion() {return "0.0.3";}
+    getVersion() {return "0.0.5";}
     getAuthor() {return "Alexandro";}
 
     start() {
@@ -43,6 +49,21 @@ class AlexLib{
     }
 
     stop() {
+	    if (window.AlexLib_Global.loading) {
+                    if (PluginStores.delayed.starts.includes(this)) PluginStores.delayed.starts.splice(PluginStores.delayed.starts.indexOf(this), 1);
+                }
+                else {
+                    if (this.stopping) return;
+                    this.stopping = true;
+                    AlexLib.TimeUtils.timeout(_ => {delete this.stopping;});
+                    
+                    AlexLib.TimeUtils.suppress(_ => {
+                        if (typeof this.onStop == "function") this.onStop();
+                        BDFDB.PluginUtils.clear(this);
+                    }, "Failed to stop the plugin ", config.info)();
+
+                    delete this.started;
+                }
 
     }
 }
@@ -99,7 +120,7 @@ module.exports = (() =>
                     github_username: "lol219",
                 }
             ],
-            version: "0.0.4",
+            version: "0.0.5",
             description: "Required library for Alexandro's plugin , please do not delete it "
         },
         "changelog":[
@@ -107,7 +128,7 @@ module.exports = (() =>
                 "title": 'Added',
                 "type": 'added :',
                 "items": [
-                "**Settings** : Plugin Settings (autoUpdates)",
+                "**Plugin Configuration** : Added Some Plugin Configurations and error detections",
                 "**Patchs** :   Patched Some Console error issues"
                 
                 
