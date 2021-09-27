@@ -11,7 +11,6 @@
     const LibraryRequires = {};
     const LibraryModules = {};
     const InternalComponents = {NativeSubComponents: {}, LibraryComponents: {}};
-    //const {Popouts, DiscordModules, DiscordSelectors, DiscordClasses, Utilities};
     const buildPlugin = ([Plugin, Api]) => {
     const { ContextMenu, EmulatedTooltip, Toasts, Settings, Popouts, Modals, Utilities, WebpackModules, Filters, DiscordModules, ColorConverter, DOMTools, DiscordClasses, DiscordSelectors, ReactTools, ReactComponents, DiscordAPI, Logger, PluginUpdater, PluginUtilities, DiscordClassModules, Structs } = Api;
     const { React, ModalStack, ReactDOM, ChannelStore, GuildStore, UserStore, DiscordConstants, Dispatcher, GuildMemberStore, GuildActions, PrivateChannelActions, LayerManager, InviteActions, FlexChild, Titles, Changelog: ChangelogModal } = DiscordModules;
