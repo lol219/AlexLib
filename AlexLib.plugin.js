@@ -59,7 +59,7 @@ class AlexLib{
                     
                     AlexLib.TimeUtils.suppress(_ => {
                         if (typeof this.onStop == "function") this.onStop();
-                        BDFDB.PluginUtils.clear(this);
+                         AlexLib.PluginUtils.clear(this);
                     }, "Failed to stop the plugin ", config.info)();
 
                     delete this.started;
