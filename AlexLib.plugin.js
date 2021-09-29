@@ -6,7 +6,10 @@
  * @description Required library for Alexandro's plugin , please do not delete it 
  */
 
-
+    const { webFrame } = require('electron')
+    const path = require("path");
+    const modules = [];
+    const PluginData = {}
     const DiscordObjects = {};
     const LibraryRequires = {};
     const LibraryModules = {};
