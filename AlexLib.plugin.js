@@ -43,7 +43,7 @@ if (InternalData) loadLibrary();
 class AlexLib{
     getName() {return "AlexLib";}
     getDescription() {return "Required library for Alexandro's plugin , please do not delete it ";}
-    getVersion() {return "0.0.6";}
+    getVersion() {return "0.0.7";}
     getAuthor() {return "Alexandro";}
 
     start() {
@@ -123,7 +123,7 @@ module.exports = (() =>
                     github_username: "lol219",
                 }
             ],
-            version: "0.0.6",
+            version: "0.0.7",
             description: "Required library for Alexandro's plugin , please do not delete it "
         },
         "changelog":[
@@ -131,7 +131,7 @@ module.exports = (() =>
                 "title": 'Fixed',
                 "type": 'Fixed',
                 "items": [
-                "**Backend**: Fixed AlexLib function after it was dying on the newest discord updates",
+                "Fixed a crash while copying someone's user ID in IOS",
                
                 
                 
@@ -274,7 +274,7 @@ module.exports = (() =>
 
                 onStart()
                 {
-                    //console.clear()
+                    console.clear()
                     console.log = emptyFunction;
                     console.info = emptyFunction;
                     console.warn = emptyFunction;
