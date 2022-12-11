@@ -131,7 +131,7 @@ module.exports = (() =>
                 "title": 'Fixed',
                 "type": 'Fixed',
                 "items": [
-                "Fixed a crash while copying someone's user ID in IOS",
+                "Test Build | Electron v17 support",
                
                 
                 
